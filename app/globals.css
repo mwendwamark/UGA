@@ -1,26 +1,141 @@
-@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* UGA Brand Colors */
+  --uga-blue: #0008c0;
+  --light-blue: #616cf2;
+  --uga-yellow: #e7f914;
+  --alert-red: #fa0108;
+  --near-black: #1e1e1e;
+  --body-grey: #555555;
+  --white: #ffffff;
+  --off-white: #fafaf9;
+
+  /* Typography */
+  --font-primary: "DM Sans", sans-serif;
+
+  /* Spacing */
+  --container-max: 90%;
+  --section-padding: 80px 0;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-primary);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--near-black);
+  background-color: var(--white);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+p {
+  color: var(--body-grey);
+  margin-bottom: 1rem;
+  /* letter-spacing: px; */
+}
+
+a {
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+button {
+  font-family: var(--font-primary);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.section {
+  padding: 10rem 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+/* Responsive Breakpoints */
+@media (min-width: 2000px) {
+  .container {
+    max-width: 2000px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 60px 0;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .btn {
+    padding: 12px 24px;
+    font-size: 0.875rem;
+  }
 }
