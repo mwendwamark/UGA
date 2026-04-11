@@ -1,9 +1,12 @@
+import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/footer/Footer";
+import "./page.module.css"
+
 export default function Home() {
   return (
     <>
-      <main style={{ padding: '40px 20px', textAlign: 'center' }}>
-        
-      </main>
+      <Navbar />
+      <Footer />
     </>
   );
 }

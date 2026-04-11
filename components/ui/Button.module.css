@@ -2,7 +2,7 @@
   font-size: 14px;
   text-transform: uppercase;
   font-weight: 300;
-  border-radius: 0;
+  border-radius: 999px;
   padding: 0.65rem 1.8rem;
   display: inline-flex;
   align-items: center;
@@ -10,7 +10,7 @@
   transition: all 0.25s ease;
   cursor: pointer;
   font-family: inherit;
-  letter-spacing: 0em;
+  letter-spacing: 0px;
   text-decoration: none;
   border: none;
   outline: none;
