@@ -93,7 +93,7 @@ export function Navbar({ variant = "primary" }) {
   return (
     <>
       <nav className={getNavbarClasses()}>
-        <div className={styles.nav_container}>
+        <div className={`${styles.nav_container} container`}>
           <div className={styles.logo}>
             <Link href="/">
               <Image

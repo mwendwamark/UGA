@@ -22,9 +22,7 @@ export function Hero() {
       <div className={`${styles.content} container`}>
         <div className={styles.left}>
           <span className={styles.tag}>Gilgil, Nakuru County · Est. 2019</span>
-          <h1 className={styles.title}>
-            Utumishi <br /> Girls <br /> Academy
-          </h1>
+          <h1 className={styles.title}>Utumishi Girls Academy</h1>
           <p className={styles.motto}>Greatness In Humility</p>
         </div>
 

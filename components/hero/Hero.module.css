@@ -196,11 +196,17 @@
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem 2rem;
   }
+
+  .scrollIndicator {
+    bottom: 1rem;
+  }
 }
 
 @media (max-width: 768px) {
   .content {
-    padding-bottom: 4rem;
+    padding-bottom: 8rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .title {
@@ -208,7 +214,7 @@
   }
 
   .statsGrid {
-    gap: 1.25rem 1.5rem;
+    gap: 0.5rem;
   }
 
   .overlay {
