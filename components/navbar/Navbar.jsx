@@ -120,10 +120,7 @@ export function Navbar({ variant = "primary" }) {
           </div>
 
           <div className={styles.cta}>
-            <Button
-              href="/contact"
-              variant={isScrolled ? "black" : "white"}
-            >
+            <Button href="/contact" variant={isScrolled ? "black" : "yellow"}>
               Contact Us
             </Button>
           </div>

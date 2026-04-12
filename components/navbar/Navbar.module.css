@@ -5,7 +5,10 @@
   width: 100%;
   z-index: 100;
   padding: 1.2rem 3%;
-  transition: transform 0.35s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.35s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
   background-color: transparent;
 }
 
@@ -95,7 +98,7 @@
 
 .scrolled .navLink.active {
   background: rgba(0, 8, 192, 0.08);
-  color: #0008C0;
+  color: #0008c0;
 }
 
 .cta {
@@ -136,7 +139,7 @@
   right: 0;
   width: 60%;
   height: 100vh;
-  background: #0008C0;
+  background: #0008c0;
   z-index: 999;
   transform: translateX(100%);
   transition: transform 0.3s ease;
@@ -186,7 +189,7 @@
 }
 
 .drawerLinkActive {
-  color: #E7F914;
+  color: #e7f914;
   font-weight: 400;
 }
 

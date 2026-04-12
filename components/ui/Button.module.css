@@ -23,29 +23,52 @@
 
 .white {
   background: #ffffff;
-  color: #1e1e1e;
+  color: var(--near-black);
   border: none;
 }
 
 .white:hover:not(:disabled) {
-  background: #f0f0f0;
+  background-color: var(--uga-yellow);
+}
+
+.yellow {
+  background-color: var(--uga-yellow);
+  color: var(--near-black);
+  border: 1px solid var(--uga-yellow);
+}
+
+.yellow:hover:not(:disabled) {
+  background-color: transparent;
+  border: 1px solid var(--uga-yellow);
+  color: var(--uga-yellow);
 }
 
 .whiteOutline {
   background: transparent;
-  color: #1e1e1e;
-  border: 1px solid #1e1e1e;
+  color: var(--near-black);
+  border: 1px solid var(--near-black);
 }
 
 .whiteOutline:hover:not(:disabled) {
-  background: #1e1e1e;
+  background: var(--near-black);
   color: #ffffff;
 }
 
-.black {
-  background: #1e1e1e;
+.white-outline {
+  background: transparent;
   color: #ffffff;
-  border: 1px solid #1e1e1e;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.white-outline:hover:not(:disabled) {
+  background: #ffffff;
+  color: var(--near-black);
+}
+
+.black {
+  background: var(--near-black);
+  color: #ffffff;
+  border: 1px solid var(--near-black);
 }
 
 .black:hover:not(:disabled) {
