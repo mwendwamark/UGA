@@ -1,0 +1,45 @@
+.pretitle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pretitle_ribbon {
+  display: flex;
+  align-items: stretch;
+  height: 16px;
+  gap: 2px;
+}
+
+.police_block {
+  width: 14px;
+  height: 100%;
+}
+
+.police_blue {
+  background-color: var(--uga-blue);
+  width: 15px;
+}
+
+.police_light_blue {
+  background-color: var(--light-blue);
+  width: 15px;
+}
+
+.police_red {
+  background-color: var(--alert-red);
+  width: 15px;
+}
+
+.police_yellow {
+  background-color: var(--uga-yellow);
+  width: 15px;
+}
+
+.text {
+  font-size: 1.2rem;
+  letter-spacing: -0.6px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--body-grey);
+}

@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { Button } from "@/components/ui/Button";
-import styles from "./Hero.module.css";
+import { Button } from "../../../components/ui/Button";
+import styles from "./HomeHero.module.css";
 
-export function Hero() {
+export function HomeHero() {
   return (
     <section className={styles.hero}>
       <div className={styles.bgWrapper}>

@@ -79,6 +79,18 @@ button {
   margin: 0 auto;
 }
 
+.small_container {
+  max-width: 75%;
+  margin: 0 auto;
+}
+
+.pre_title{
+  font-size: 1.2rem;
+  letter-spacing: -0.6px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
 .section {
   padding: 10rem 0;
 }
@@ -107,6 +119,10 @@ button {
 @media (min-width: 2000px) {
   .container {
     max-width: 2000px;
+  }
+
+  .small_container {
+    max-width: 1400px;
   }
 }
 
