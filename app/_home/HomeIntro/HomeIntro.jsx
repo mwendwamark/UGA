@@ -10,7 +10,7 @@ export default function HomeIntro() {
           <Pretitle text="introduction" />
         </div>
         <div className={`${styles.home_intro_right}`}>
-          <h2 className={`${styles.home_intro_title}`}>
+          <h2 className="section_title grey">
             Empowering young women through academic excellence and disciplined
             leadership, Utumishi Girls Academy fosters a nurturing environment
             where every student thrives and succeeds.

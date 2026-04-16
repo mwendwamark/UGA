@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 
 :root {
-  /* UGA Brand Colors */
+  /* ── Brand Colors ── */
   --uga-blue: #0008c0;
   --light-blue: #616cf2;
   --uga-yellow: #e7f914;
@@ -10,20 +10,25 @@
   --body-grey: #555555;
   --white: #ffffff;
   --off-white: #fafaf9;
+  --light-grey: #eeeeee;
 
-  /* Typography */
+  /* ── Typography ── */
   --font-primary: "DM Sans", sans-serif;
 
-  /* Spacing */
+  /* ── Spacing ── */
   --container-max: 90%;
-  --section-padding: 80px 0;
 
-  /* Transitions */
+  /* ── Transitions ── */
   --transition-fast: 0.2s ease;
   --transition-normal: 0.3s ease;
 }
 
-* {
+/* ─────────────────────────────────────────
+   RESET
+───────────────────────────────────────── */
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -35,10 +40,54 @@ html {
 
 body {
   font-family: var(--font-primary);
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.7;
   color: var(--near-black);
   background-color: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  Intentionally NOT setting color: inherit on <a>.
+  Nav links, drawer links, and buttons all set their
+  own colors explicitly — a global color override
+  would cascade into those and break them.
+*/
+a {
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+/*
+  Intentionally NOT setting background: none on <button>.
+  The Button component manages its own backgrounds per variant.
+  Only reset the properties that are safe to reset globally.
+*/
+button {
+  font-family: var(--font-primary);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+input,
+textarea,
+select {
+  font-family: var(--font-primary);
+  font-size: 1rem;
 }
 
 h1,
@@ -52,105 +101,216 @@ h6 {
 }
 
 p {
+  font-size: 1rem;
+  line-height: 1.7;
   color: var(--body-grey);
   margin-bottom: 1rem;
 }
 
-a {
-  text-decoration: none;
-  transition: color var(--transition-fast);
+/* ─────────────────────────────────────────
+   TYPOGRAPHY SCALE
+
+   Use these as classNames directly in JSX.
+   clamp() handles all responsive scaling —
+   no media query font-size overrides needed.
+
+   .hero_title          Home page full-viewport hero
+   .page_hero_title     Inner page heroes (About, Admissions, etc.)
+   .section_title       Major section headings
+   .sub_section_title   Card titles, subsection headings
+   .pre_title           Eyebrow label above a heading
+   .body_text           Explicit body copy class (same as default p)
+   .label_text          Captions, tags, metadata
+───────────────────────────────────────── */
+
+.hero_title {
+  font-size: clamp(3.2rem, 7vw + 1rem, 8rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -3px;
+  text-transform: uppercase;
+  color: var(--white);
 }
 
-ul,
-ol,
-li {
-  list-style: none;
+.page_hero_title {
+  font-size: clamp(2.5rem, 5vw + 0.5rem, 5.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  color: var(--white);
 }
 
-button {
-  font-family: var(--font-primary);
-  cursor: pointer;
-  border: none;
-  outline: none;
+.section_title {
+  font-size: clamp(1.9rem, 2.5vw + 0.5rem, 3.2rem);
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  color: var(--near-black);
 }
 
+.sub_section_title {
+  font-size: clamp(1.2rem, 1.5vw + 0.2rem, 1.9rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.4px;
+  color: var(--near-black);
+}
+
+.pre_title {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--body-grey);
+}
+
+.body_text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--body-grey);
+  margin-bottom: 1rem;
+}
+
+.label_text {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--body-grey);
+}
+
+/* ── Color modifiers ── */
+/* Use alongside any title class: className="section_title grey" */
+.white  { color: var(--white)      !important; }
+.black  { color: var(--near-black) !important; }
+.blue   { color: var(--uga-blue)   !important; }
+.grey   { color: var(--body-grey)  !important; }
+.yellow { color: var(--uga-yellow) !important; }
+
+/* ── Weight modifiers ── */
+.fw_300 { font-weight: 300; }
+.fw_400 { font-weight: 400; }
+.fw_500 { font-weight: 500; }
+.fw_600 { font-weight: 600; }
+.fw_700 { font-weight: 700; }
+
+/* ─────────────────────────────────────────
+   LAYOUT
+───────────────────────────────────────── */
 .container {
   max-width: var(--container-max);
   margin: 0 auto;
+  width: 100%;
 }
 
 .small_container {
   max-width: 75%;
   margin: 0 auto;
-}
-
-.pre_title{
-  font-size: 1.2rem;
-  letter-spacing: -0.6px;
-  text-transform: uppercase;
-  font-weight: 600;
+  width: 100%;
 }
 
 .section {
   padding: 10rem 0;
 }
 
-.flex {
-  display: flex;
+.section_sm {
+  padding: 6rem 0;
 }
 
-.flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+/* ── Flex utilities ── */
+.flex         { display: flex; }
+.flex_center  { display: flex; align-items: center; justify-content: center; }
+.flex_between { display: flex; align-items: center; justify-content: space-between; }
+.flex_col     { flex-direction: column; }
+.flex_wrap    { flex-wrap: wrap; }
 
-.flex-between {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+/* ── Grid utilities ── */
+.grid_2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+.grid_3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.grid_4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
 
-.flex-col {
+/* ─────────────────────────────────────────
+   SECTION HEADER
+   Reusable heading block pattern:
+
+   <div className="section_header">
+     <Pretitle text="..." />
+     <h2 className="section_title grey">...</h2>
+     <p>Optional descriptor</p>
+   </div>
+───────────────────────────────────────── */
+.section_header {
+  display: flex;
   flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 3.5rem;
 }
 
-/* Responsive Breakpoints */
+.section_header p {
+  max-width: 520px;
+  margin-bottom: 0;
+}
+
+.section_header.centered {
+  align-items: center;
+  text-align: center;
+}
+
+.section_header.centered p {
+  margin: 0 auto;
+}
+
+/* ─────────────────────────────────────────
+   DIVIDER
+───────────────────────────────────────── */
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--light-grey);
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────── */
+
+/* Large monitors */
 @media (min-width: 2000px) {
-  .container {
-    max-width: 2000px;
-  }
-
-  .small_container {
-    max-width: 1400px;
-  }
+  .container     { max-width: 2000px; }
+  .small_container { max-width: 1400px; }
 }
 
+/* Laptops */
+@media (max-width: 1024px) {
+  .small_container { max-width: var(--container-max); }
+
+  .section    { padding: 8rem 0; }
+  .section_sm { padding: 4rem 0; }
+
+  .grid_3,
+  .grid_4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Tablets */
 @media (max-width: 768px) {
-  :root {
-    --section-padding: 60px 0;
-  }
+  .container { max-width: 95%; }
 
-  h1 {
-    font-size: 2.25rem;
-  }
+  .section    { padding: 6rem 0; }
+  .section_sm { padding: 3.5rem 0; }
 
-  h2 {
-    font-size: 1.75rem;
-  }
+  .section_header { margin-bottom: 2.5rem; }
 
-  .grid-2,
-  .grid-3,
-  .grid-4 {
-    grid-template-columns: 1fr;
-  }
+  .grid_2,
+  .grid_3,
+  .grid_4 { grid-template-columns: 1fr; }
+}
 
-  .container {
-    max-width: 95%;
-  }
+/* Mobile */
+@media (max-width: 480px) {
+  .container { max-width: 100%; padding: 0 1.25rem; }
 
-  .btn {
-    padding: 12px 24px;
-    font-size: 0.875rem;
-  }
+  .section    { padding: 5rem 0; }
+  .section_sm { padding: 3rem 0; }
+
+  .section_header { margin-bottom: 2rem; }
 }
