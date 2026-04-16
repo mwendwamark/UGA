@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "./HomeAbout.module.css";
+import styles from "./WhyUGA.module.css";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import Pretitle from "@/components/preTitle/Pretitle";
 
-const homeAboutCards = [
+const whyUGACards = [
   {
     number: "01",
     title: "Academic Excellence",
@@ -49,12 +49,12 @@ const HomeAbout = () => {
         <div className={styles.heading}>
           <Pretitle text="Why UGA?" />
           <h2 className={`section_title grey ${styles.title}`}>
-            What makes us different
+            What makes us stand out
           </h2>
         </div>
 
         <div className={styles.cards}>
-          {homeAboutCards.map((card, index) => (
+          {whyUGACards.map((card, index) => (
             <Link href={card.link} key={index} className={styles.card}>
               {/* Default state */}
               <div className={styles.cardDefault}>

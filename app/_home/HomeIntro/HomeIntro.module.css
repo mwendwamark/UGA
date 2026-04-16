@@ -1,3 +1,6 @@
+.section {
+  background-color: var(--uga-blue);
+}
 .home_intro_wrapper {
   display: grid;
   grid-template-columns: 0.6fr 1.2fr;

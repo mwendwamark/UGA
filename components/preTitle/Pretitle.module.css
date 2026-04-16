@@ -12,34 +12,47 @@
 }
 
 .police_block {
-  width: 14px;
+  width: 15px;
   height: 100%;
 }
 
-.police_blue {
-  background-color: var(--uga-blue);
-  width: 15px;
-}
+/* ── Ribbon block base colors ── */
+.police_blue       { background-color: var(--uga-blue); }
+.police_light_blue { background-color: var(--light-blue); }
+.police_red        { background-color: var(--alert-red); }
+.police_yellow     { background-color: var(--uga-yellow); }
 
-.police_light_blue {
-  background-color: var(--light-blue);
-  width: 15px;
-}
-
-.police_red {
-  background-color: var(--alert-red);
-  width: 15px;
-}
-
-.police_yellow {
-  background-color: var(--uga-yellow);
-  width: 15px;
-}
-
+/* ── Text base ── */
 .text {
-  font-size: 1.2rem;
-  letter-spacing: -0.6px;
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--body-grey);
 }
+
+/* ─────────────────────────────────────────
+   VARIANTS
+   Usage: <Pretitle text="..." variant="onBlue" />
+          <Pretitle text="..." variant="onDark" />
+          <Pretitle text="..." variant="onLight" />  (default)
+───────────────────────────────────────── */
+
+/* On white / off-white backgrounds — default, no overrides needed */
+.default .police_blue { background-color: var(--uga-blue); }
+.default.text         { color: var(--body-grey); }
+
+/* On blue background — swap blue block to white, text to white */
+.onBlue .police_blue  { background-color: rgba(255, 255, 255, 0.9); }
+.onBlue.text          { color: rgba(255, 255, 255, 0.75); }
+
+/* On dark/black background — swap blue block to white, text to white */
+.onDark .police_blue  { background-color: rgba(255, 255, 255, 0.9); }
+.onDark.text          { color: rgba(255, 255, 255, 0.65); }
+
+/* On image/hero — all blocks white-tinted for legibility */
+.onImage .police_blue       { background-color: rgba(255, 255, 255, 0.9); }
+.onImage .police_light_blue { background-color: rgba(255, 255, 255, 0.6); }
+.onImage .police_red        { background-color: var(--alert-red); }
+.onImage .police_yellow     { background-color: var(--uga-yellow); }
+.onImage.text               { color: rgba(255, 255, 255, 0.7); }
