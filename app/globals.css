@@ -141,6 +141,12 @@ p {
   color: var(--white);
 }
 
+.section_headers {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .section_title {
   font-size: clamp(1.9rem, 2.5vw + 0.5rem, 3.2rem);
   font-weight: 300;
@@ -167,7 +173,7 @@ p {
 
 .body_text {
   font-size: 1rem;
-  line-height: 1.7;
+  line-height: 1.6;
   color: var(--body-grey);
   margin-bottom: 1rem;
 }
@@ -182,18 +188,38 @@ p {
 
 /* ── Color modifiers ── */
 /* Use alongside any title class: className="section_title grey" */
-.white  { color: var(--white)      !important; }
-.black  { color: var(--near-black) !important; }
-.blue   { color: var(--uga-blue)   !important; }
-.grey   { color: var(--body-grey)  !important; }
-.yellow { color: var(--uga-yellow) !important; }
+.white {
+  color: var(--white) !important;
+}
+.black {
+  color: var(--near-black) !important;
+}
+.blue {
+  color: var(--uga-blue) !important;
+}
+.grey {
+  color: var(--body-grey) !important;
+}
+.yellow {
+  color: var(--uga-yellow) !important;
+}
 
 /* ── Weight modifiers ── */
-.fw_300 { font-weight: 300; }
-.fw_400 { font-weight: 400; }
-.fw_500 { font-weight: 500; }
-.fw_600 { font-weight: 600; }
-.fw_700 { font-weight: 700; }
+.fw_300 {
+  font-weight: 300;
+}
+.fw_400 {
+  font-weight: 400;
+}
+.fw_500 {
+  font-weight: 500;
+}
+.fw_600 {
+  font-weight: 600;
+}
+.fw_700 {
+  font-weight: 700;
+}
 
 /* ─────────────────────────────────────────
    LAYOUT
@@ -218,17 +244,47 @@ p {
   padding: 6rem 0;
 }
 
+.max_width_50{
+  max-width: 50%;
+}
+
 /* ── Flex utilities ── */
-.flex         { display: flex; }
-.flex_center  { display: flex; align-items: center; justify-content: center; }
-.flex_between { display: flex; align-items: center; justify-content: space-between; }
-.flex_col     { flex-direction: column; }
-.flex_wrap    { flex-wrap: wrap; }
+.flex {
+  display: flex;
+}
+.flex_center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex_between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flex_col {
+  flex-direction: column;
+}
+.flex_wrap {
+  flex-wrap: wrap;
+}
 
 /* ── Grid utilities ── */
-.grid_2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
-.grid_3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-.grid_4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+.grid_2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+.grid_3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.grid_4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
 
 /* ─────────────────────────────────────────
    SECTION HEADER
@@ -276,41 +332,72 @@ p {
 
 /* Large monitors */
 @media (min-width: 2000px) {
-  .container     { max-width: 2000px; }
-  .small_container { max-width: 1400px; }
+  .container {
+    max-width: 2000px;
+  }
+  .small_container {
+    max-width: 1400px;
+  }
 }
 
 /* Laptops */
 @media (max-width: 1024px) {
-  .small_container { max-width: var(--container-max); }
+  .small_container {
+    max-width: var(--container-max);
+  }
 
-  .section    { padding: 8rem 0; }
-  .section_sm { padding: 4rem 0; }
+  .section {
+    padding: 8rem 0;
+  }
+  .section_sm {
+    padding: 4rem 0;
+  }
 
   .grid_3,
-  .grid_4 { grid-template-columns: repeat(2, 1fr); }
+  .grid_4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* Tablets */
 @media (max-width: 768px) {
-  .container { max-width: 95%; }
+  .container {
+    max-width: 95%;
+  }
 
-  .section    { padding: 6rem 0; }
-  .section_sm { padding: 3.5rem 0; }
+  .section {
+    padding: 6rem 0;
+  }
+  .section_sm {
+    padding: 3.5rem 0;
+  }
 
-  .section_header { margin-bottom: 2.5rem; }
+  .section_header {
+    margin-bottom: 2.5rem;
+  }
 
   .grid_2,
   .grid_3,
-  .grid_4 { grid-template-columns: 1fr; }
+  .grid_4 {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Mobile */
 @media (max-width: 480px) {
-  .container { max-width: 100%; padding: 0 1.25rem; }
+  .container {
+    max-width: 100%;
+    padding: 0 1.25rem;
+  }
 
-  .section    { padding: 5rem 0; }
-  .section_sm { padding: 3rem 0; }
+  .section {
+    padding: 5rem 0;
+  }
+  .section_sm {
+    padding: 3rem 0;
+  }
 
-  .section_header { margin-bottom: 2rem; }
+  .section_header {
+    margin-bottom: 2rem;
+  }
 }

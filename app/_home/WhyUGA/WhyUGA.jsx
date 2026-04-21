@@ -42,7 +42,7 @@ const whyUGACards = [
   },
 ];
 
-const HomeAbout = () => {
+const WhyUGA = () => {
   return (
     <section className={`${styles.section} section`}>
       <div className="container">
@@ -84,4 +84,4 @@ const HomeAbout = () => {
   );
 };
 
-export default HomeAbout;
+export default WhyUGA;

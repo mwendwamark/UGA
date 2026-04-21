@@ -150,6 +150,7 @@
   .cards {
     grid-template-columns: 1fr;
     gap: 0.4rem;
+    padding: 0 !important;
   }
 
   .card {

@@ -29,7 +29,7 @@ export function HomeHero() {
         <div className={styles.right}>
           <div className={styles.statsGrid}>
             <div className={styles.stat}>
-              <span className={styles.statNumber}>92%</span>
+              <span className={styles.statNumber}>96%</span>
               <span className={styles.statLabel}>
                 University Transition Rate
               </span>

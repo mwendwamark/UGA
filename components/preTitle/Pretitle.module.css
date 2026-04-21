@@ -17,17 +17,25 @@
 }
 
 /* ── Ribbon block base colors ── */
-.police_blue       { background-color: var(--uga-blue); }
-.police_light_blue { background-color: var(--light-blue); }
-.police_red        { background-color: var(--alert-red); }
-.police_yellow     { background-color: var(--uga-yellow); }
+.police_blue {
+  background-color: var(--uga-blue);
+}
+.police_light_blue {
+  background-color: var(--light-blue);
+}
+.police_red {
+  background-color: var(--alert-red);
+}
+.police_yellow {
+  background-color: var(--uga-yellow);
+}
 
 /* ── Text base ── */
 .text {
   font-size: 0.9rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--body-grey);
 }
 
@@ -39,20 +47,42 @@
 ───────────────────────────────────────── */
 
 /* On white / off-white backgrounds — default, no overrides needed */
-.default .police_blue { background-color: var(--uga-blue); }
-.default.text         { color: var(--body-grey); }
+.default .police_blue {
+  background-color: var(--uga-blue);
+}
+.default.text {
+  color: var(--body-grey);
+}
 
 /* On blue background — swap blue block to white, text to white */
-.onBlue .police_blue  { background-color: rgba(255, 255, 255, 0.9); }
-.onBlue.text          { color: rgba(255, 255, 255, 0.75); }
+.onBlue .police_blue {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.onBlue.text {
+  color: rgba(255, 255, 255, 0.75);
+}
 
 /* On dark/black background — swap blue block to white, text to white */
-.onDark .police_blue  { background-color: rgba(255, 255, 255, 0.9); }
-.onDark.text          { color: rgba(255, 255, 255, 0.65); }
+.onDark .police_blue {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.onDark.text {
+  color: rgba(255, 255, 255, 0.65);
+}
 
 /* On image/hero — all blocks white-tinted for legibility */
-.onImage .police_blue       { background-color: rgba(255, 255, 255, 0.9); }
-.onImage .police_light_blue { background-color: rgba(255, 255, 255, 0.6); }
-.onImage .police_red        { background-color: var(--alert-red); }
-.onImage .police_yellow     { background-color: var(--uga-yellow); }
-.onImage.text               { color: rgba(255, 255, 255, 0.7); }
+.onImage .police_blue {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.onImage .police_light_blue {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.onImage .police_red {
+  background-color: var(--alert-red);
+}
+.onImage .police_yellow {
+  background-color: var(--uga-yellow);
+}
+.onImage.text {
+  color: rgba(255, 255, 255, 0.7);
+}
