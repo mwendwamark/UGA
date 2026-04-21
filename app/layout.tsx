@@ -3,9 +3,16 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Utumishi Girls Academy | Gilgil, Nakuru County",
-  description: "A centre of academic excellence and character formation for girls in the heart of the Rift Valley. Enrolling Form 1 students.",
+  description:
+    "A centre of academic excellence and character formation for girls in the heart of the Rift Valley. Enrolling Form 1 students.",
   icons: {
     icon: "/assets/logo.webp",
+  },
+  verification: {
+    google: "hvtvgLUAEEBi-hqFdayn1BtW7uQOORA74u-rJ_xKVu4",
+  },
+  other: {
+    "msvalidate.01": "BBFA8943687CEBB8053C9FE936A80263",
   },
 };
 
