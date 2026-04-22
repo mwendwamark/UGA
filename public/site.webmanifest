@@ -1,0 +1,27 @@
+{
+  "name": "Utumishi Girls Academy",
+  "short_name": "UGA",
+  "description": "Girls boarding secondary school in Gilgil, Nakuru County, Kenya",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0008C0",
+  "theme_color": "#0008C0",
+  "icons": [
+    {
+      "src": "/assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "categories": ["education"],
+  "lang": "en",
+  "scope": "/",
+  "orientation": "portrait-primary"
+}
