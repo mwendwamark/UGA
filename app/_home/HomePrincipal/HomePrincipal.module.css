@@ -1,0 +1,205 @@
+.section {
+  background-color: var(--white);
+  padding: 8rem 0;
+  overflow-x: hidden !important;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* ── LAYOUT ── */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  align-items: center;
+  position: relative;
+}
+
+/* ── IMAGE SIDE ── */
+.imageSide {
+  position: relative;
+  z-index: 2;
+}
+
+.imageWrap {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  border-radius: 4px;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.img {
+  object-fit: cover;
+}
+
+/* Striped Circle - Bottom Left of Image */
+.stripedCircle {
+  position: absolute;
+  bottom: -40px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--uga-blue),
+    var(--uga-blue) 2px,
+    transparent 2px,
+    transparent 12px
+  );
+  border-radius: 50%;
+  z-index: 4;
+  opacity: 0.25;
+}
+
+/* ── CARD SIDE ── */
+.cardSide {
+  position: relative;
+  margin-left: -12%;
+  z-index: 5;
+}
+
+/* Solid Circle */
+.topCircle {
+  position: absolute;
+  top: -60px;
+  right: -3rem;
+  width: 160px;
+  height: 160px;
+  background-color: var(--light-blue);
+  border-radius: 50%;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+.card {
+  background-color: var(--white);
+  padding: 8rem 3.5rem;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Teal Block */
+.decorBlock {
+  position: absolute;
+  bottom: -50px;
+  right: -80px;
+  width: 80%;
+  height: 70%;
+  background-color: var(--uga-blue);
+  z-index: -1;
+  opacity: 0.12;
+}
+
+/* ── RESPONSIVE 1024px ── */
+@media (max-width: 1024px) {
+  .cardSide {
+    margin-left: -15%;
+  }
+  .card {
+    padding: 2.5rem;
+  }
+}
+
+/* ── RESPONSIVE 768px — matches reference image layout ── */
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  /* Image — inset from edges like the reference */
+  .imageSide {
+    margin: 0 1.5rem;
+  }
+
+  .imageWrap {
+    height: 420px;
+    border-radius: 4px;
+  }
+
+  /* Striped circle stays bottom-left of photo */
+  .stripedCircle {
+    bottom: -30px;
+    left: -30px;
+    width: 140px;
+    height: 140px;
+  }
+
+  /* Solid circle moves to top-right of photo */
+  .topCircle {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 180px;
+    height: 180px;
+    opacity: 0.4;
+    /* override the card-relative positioning from desktop */
+    left: auto;
+  }
+
+  /* Card overlaps image from below */
+  .cardSide {
+    margin-left: 0;
+    margin-top: -60px;
+    padding: 0 1rem;
+    /* topCircle is on imageSide on mobile so reset card z */
+    z-index: 3;
+  }
+
+  .card {
+    padding: 2.5rem 2rem;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+    gap: 1.5rem;
+  }
+
+  /* Deco block peeks from bottom and right of card */
+  .decorBlock {
+    bottom: -30px;
+    right: -20px;
+    width: 55%;
+    height: 55%;
+    opacity: 0.15;
+  }
+}
+
+@media (max-width: 480px) {
+  .imageSide {
+    margin: 0 1rem;
+  }
+
+  .imageWrap {
+    height: 340px;
+  }
+
+  .stripedCircle {
+    width: 110px;
+    height: 110px;
+    bottom: -20px;
+    left: -20px;
+  }
+
+  .topCircle {
+    width: 90px;
+    height: 90px;
+    top: -20px;
+    right: -20px;
+  }
+
+  .cardSide {
+    padding: 0 0.5rem;
+    margin-top: -50px;
+  }
+
+  .card {
+    padding: 2rem 1.5rem;
+  }
+}
